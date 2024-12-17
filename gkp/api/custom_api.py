@@ -49,7 +49,7 @@ def get_testimoni_summary2():
                 ELSE t.tamu
             END AS nama
         FROM `tabTestimoni` t
-        ORDER BY t.tanggal DESC
+        ORDER BY t.tanggal ASC
         LIMIT 10
     """, as_dict=True)
 
