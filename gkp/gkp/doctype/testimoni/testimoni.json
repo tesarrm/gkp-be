@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-16 20:17:54.870834",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qutk",
+  "status",
+  "siswa",
+  "guru",
+  "tamu",
+  "instansi",
+  "tanggal",
+  "column_break_ckrc",
+  "rating",
+  "testimoni"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qutk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Siswa\nGuru\nTamu"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Siswa\"",
+   "fieldname": "siswa",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Siswa",
+   "options": "Siswa"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Guru\"",
+   "fieldname": "guru",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guru",
+   "options": "Guru"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Tamu\"",
+   "fieldname": "tamu",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tamu"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Tamu\"",
+   "fieldname": "instansi",
+   "fieldtype": "Data",
+   "label": "Instansi"
+  },
+  {
+   "default": "Today",
+   "fieldname": "tanggal",
+   "fieldtype": "Date",
+   "label": "Tanggal"
+  },
+  {
+   "fieldname": "column_break_ckrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Rating",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "testimoni",
+   "fieldtype": "Small Text",
+   "label": "Testimoni"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-16 23:33:41.863896",
+ "modified_by": "Administrator",
+ "module": "GKP",
+ "name": "Testimoni",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
