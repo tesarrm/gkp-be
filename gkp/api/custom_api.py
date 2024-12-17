@@ -43,13 +43,14 @@ def get_testimoni_summary2():
             t.tanggal,
             t.rating,
             t.testimoni,
+            t.creation,
             CASE
                 WHEN t.siswa IS NOT NULL THEN (SELECT nama FROM `tabSiswa` WHERE name = t.siswa)
                 WHEN t.guru IS NOT NULL THEN (SELECT nama FROM `tabGuru` WHERE name = t.guru)
                 ELSE t.tamu
             END AS nama
         FROM `tabTestimoni` t
-        ORDER BY t.tanggal ASC
+        ORDER BY t.creation DESC
         LIMIT 10
     """, as_dict=True)
 
